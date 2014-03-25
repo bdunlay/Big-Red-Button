@@ -12,7 +12,7 @@ Parts
 
 Special Instructions
 --------------------
-Follow [@roteno's](https://www.youtube.com/watch?v=sBbFbR4EEoc&list=UUfnEMfoApmVJunf27znatsA&index=1) instructions to turn it from a locking switch to a momentary switch. Screwdriver required.
+Follow [Victor's](https://www.youtube.com/watch?v=sBbFbR4EEoc&list=UUfnEMfoApmVJunf27znatsA&index=1) instructions to turn it from a locking switch to a momentary switch. Screwdriver required.
 
 What am I using this for?
 -------------------------
