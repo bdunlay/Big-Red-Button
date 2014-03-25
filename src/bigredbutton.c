@@ -4,7 +4,7 @@
 #include "bigredbutton.h"
 #include "usb_keyboard.h"
 
-volatile int typing;
+volatile int typing = 0;
 
 /* Entry Point */
 int main()
@@ -19,7 +19,7 @@ int main()
 }
  
 /* Initialize the keyboard and the microcontroller */
-void initialize(void)
+void initialize()
 {
 
     typing = 0;
@@ -60,10 +60,8 @@ ISR(PCINT0_vect)
             usb_keyboard_press(buildString[i], 0);
             usb_keyboard_send();
             _delay_ms(10);
-
         }
-        while
-        (KEY_ENTER != buildString[i++]);
+        while (KEY_ENTER != buildString[i++]);
 
         typing = 0;
     }
