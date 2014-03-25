@@ -49,17 +49,21 @@ ISR(PCINT0_vect)
 
     if (0 == typing && 1 == (PINB & (1 << PB0)))
     {
+        int i = 0;
         typing = 1;
 
-        unsigned int buildString[] = { KEY_B, KEY_U, KEY_I, KEY_L, KEY_D, KEY_SPACE, KEY_MINUS, KEY_C, KEY_SPACE, KEY_SLASH, KEY_P, KEY_A, KEY_R, KEY_E, KEY_N, KEY_T, KEY_ENTER};
-        int i;
-         
-        for (i = 0; i < 17; i++)
+        unsigned int buildString[] = { KEY_B, KEY_U, KEY_I, KEY_L, KEY_D, KEY_SPACE, 
+            KEY_MINUS, KEY_C, KEY_SPACE, KEY_SLASH, KEY_P, KEY_A, KEY_R, KEY_E, KEY_N, KEY_T, KEY_ENTER};
+        
+        do 
         {
             usb_keyboard_press(buildString[i], 0);
             usb_keyboard_send();
             _delay_ms(10);
+
         }
+        while
+        (KEY_ENTER != buildString[i++]);
 
         typing = 0;
     }
